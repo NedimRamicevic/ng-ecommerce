@@ -9,6 +9,8 @@ import { SaleComponent } from './components/sale/sale.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContactComponent } from './components/contact/contact.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,7 @@ import { ContactComponent } from './components/contact/contact.component';
     CartComponent,
     SaleComponent,
     NavbarComponent,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
