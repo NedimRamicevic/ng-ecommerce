@@ -11,15 +11,39 @@ export class HomeComponent implements OnInit   {
   products:any
 
   
-  constructor (private  service: ProductsService) {
-    
-  }
+  
 
   ngOnInit(): void {
-    this.service.getProducts().subscribe((data)=>{
-      console.log(data);
-      this.products = data;
-    })
+    this.products = [
+      {
+        'id': 1,
+        'name': 'Product 1',
+        'price': 100,
+        'image': 'https://via.placeholder.com/200x150'
+        
+      },
+      {
+        'id': 1,
+        'name': 'Product 1',
+        'price': 100,
+        'image': 'https://via.placeholder.com/200x150'
+        
+      },
+      {
+        'id': 1,
+        'name': 'Product 1',
+        'price': 100,
+        'image': 'https://via.placeholder.com/200x150'
+        
+      },
+      {
+        'id': 1,
+        'name': 'Product 1',
+        'price': 100,
+        'image': 'https://via.placeholder.com/200x150'
+        
+      },
+    ];
   }
 
 }
