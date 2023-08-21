@@ -12,6 +12,8 @@ export class ProductsService {
   
   getProducts(){
     return this.httpClient.get(this.url);
-  
+  }
+  getProduct(id: number){
+    return this.httpClient.get(this.url + '/' + id);
   }
 }

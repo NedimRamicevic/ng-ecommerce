@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SaleComponent } from './components/sale/sale.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   
@@ -31,7 +32,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),
+    HttpClientModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
