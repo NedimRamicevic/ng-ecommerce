@@ -9,6 +9,7 @@ import { SaleComponent } from './components/sale/sale.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProductComponent } from './components/product/product.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 
 
@@ -21,6 +22,7 @@ import { ProductComponent } from './components/product/product.component';
     NavbarComponent,
     ContactComponent,
     ProductComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,

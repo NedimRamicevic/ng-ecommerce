@@ -5,12 +5,17 @@ import { SaleComponent } from './components/sale/sale.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 const routes: Routes = [
   
   {
     path:'home',
     component:HomeComponent,
+  },
+  {
+    path:'product/:id',
+    component:ProductDetailComponent
   },
   {
     path:'contact',
