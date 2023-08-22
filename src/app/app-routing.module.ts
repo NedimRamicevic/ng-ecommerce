@@ -6,6 +6,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path:'product/:id',
     component:ProductDetailComponent
+  },
+  {
+    path:'about',
+    component:AboutComponent
   },
   {
     path:'contact',
