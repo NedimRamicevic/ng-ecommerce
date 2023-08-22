@@ -7,4 +7,5 @@ export default interface Product {
     description: string;
     image: string;
     rating: object;
+    quantity: number;
 }

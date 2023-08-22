@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyClv5PipgT55VSIn3MYVHhuuFQtDNSWYWI",
@@ -31,6 +32,7 @@ const firebaseConfig = {
     ContactComponent,
     ProductComponent,
     ProductDetailComponent,
+    FilterComponent,
   ],
   imports: [
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
