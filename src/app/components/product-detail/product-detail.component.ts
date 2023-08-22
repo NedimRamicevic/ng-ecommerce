@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { ProductsService } from '../../services/products.service';
+import { FirebaseService} from '../../services/firebase.service';
+import Product from '../../models/product-interface';
 
 
 @Component({
@@ -9,14 +11,18 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  product:any
+  product:any; 
   color:string = 'gray'
 
-  constructor(private route: ActivatedRoute,private service:ProductsService) {
+  constructor(private route: ActivatedRoute,private service:ProductsService, private firebaseService: FirebaseService) {
   }
 
   onHeartClick(){
     this.color = this.color === 'red' ? 'gray' : 'red';
+  }
+
+  addProduct(){
+    this.firebaseService.addProduct(this.product);
   }
 
   ngOnInit(){
