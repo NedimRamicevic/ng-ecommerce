@@ -1,5 +1,18 @@
-<div class="grid grid-cols-3">
-  <div *ngFor="let product of products">
-    <app-product [product]="product"></app-product>
+<div class="flex flex-col gap-2">
+  <div>
+    <select
+      (change)="onSelectChange($event)"
+      class="bg-gray-50 border m-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/6 p-1.5"
+    >
+      <option>3 columns</option>
+      <option>4 columns</option>
+    </select>
+  </div>
+  <div
+    [ngClass]="selectedOption == '3' ? 'grid grid-cols-3' : 'grid grid-cols-4'"
+  >
+    <div *ngFor="let product of products">
+      <app-product [product]="product"></app-product>
+    </div>
   </div>
 </div>
