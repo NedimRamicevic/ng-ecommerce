@@ -28,6 +28,11 @@ export class CartComponent implements OnInit {
       });
       });
     }
+
+    deleteProduct(id: string){
+      this.firebaseService.deleteProduct(id);
+    }
+
     onMinusClick(product: any){
       if(product.quantity > 1){
       this.totalPrice = 0;

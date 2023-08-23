@@ -34,11 +34,10 @@ export class FirebaseService {
     });
   }
  
-
-
-  // deleteProduct(id: string){
-  //   return deleteDoc(doc(this.fs, 'products', id));
-  // }
+  deleteProduct(id: string){
+    const productRef = doc(this.fs, `products/${id}`);
+    return deleteDoc(productRef);
+  }
 
   updateProduct(product: Product){
    const productRef = doc(this.fs, `products/${product.id}`);
