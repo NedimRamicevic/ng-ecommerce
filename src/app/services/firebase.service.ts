@@ -15,15 +15,16 @@ export class FirebaseService {
 async deneme(){
   const productsRef = collection(this.fs, 'products');
   const docRef = doc(productsRef, 'Rp8eZgiRgQ7hklA71Kuy');
+  console.log(docRef);
   const docSnap = await getDoc(docRef);
   console.log(docSnap.data());
 }
 
-updateDeneme(productID: string){
-  const productsRef = collection(this.fs, 'products');
-  const docRef = doc(productsRef, productID);
-  updateDoc(docRef, {
-    title: 'updated title'
+async updateDeneme(product: any){
+  const docRef = doc(this.fs, 'products/Rp8eZgiRgQ7hklA71Kuy');
+  await updateDoc(docRef, {
+    title:'selamlar'
+
   });
 }
 
@@ -39,6 +40,9 @@ updateDeneme(productID: string){
   
 
   addProduct(product: Product){
+    if(product.quantity == null){
+      product.quantity = 1;
+    }
     return addDoc(collection(this.fs, 'products'), {
       Id: product.id,
       title: product.title,
@@ -57,19 +61,12 @@ updateDeneme(productID: string){
     return deleteDoc(productRef);
   }
 
-  updateProduct(product: Product){
-   const productRef = doc(this.fs, `products/${product.id}`);
-   return setDoc(productRef, {
-    Id: product.id,
-    title: product.title,
-    category: product.category,
-    description: product.description,
-    price: product.price,
-    image: product.image,
-    rating: product.rating,
-    quantity: product.quantity
-    
-  });
+  async updateProduct(product: Product){
+   const docRef = doc(this.fs, `products/${product.id}`);
+   await updateDoc(docRef, {
+     quantity: product.quantity
+ 
+   });
   }
 
 }
