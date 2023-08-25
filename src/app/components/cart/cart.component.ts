@@ -17,7 +17,9 @@ export class CartComponent implements OnInit {
     ngOnInit(): void {
       this.totalPrice = 0;
     } 
-
+    onUpdateClick(productID: string){
+      this.firebaseService.updateDeneme(productID);
+    }
     getProducts(){
       
       this.firebaseService.getProducts().subscribe(data => {

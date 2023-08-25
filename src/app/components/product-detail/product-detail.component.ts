@@ -16,6 +16,9 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,private service:ProductsService, private firebaseService: FirebaseService) {
   }
+  onDenemeClick(){
+    this.firebaseService.deneme();
+  }
 
   onHeartClick(){
     this.color = this.color === 'red' ? 'gray' : 'red';
