@@ -34,7 +34,9 @@ export class CartComponent implements OnInit {
     deleteProduct(id: string){
       this.firebaseService.deleteProduct(id);
     }
-
+    ondemeClick(){
+      this.firebaseService.updateDeneme(this.products);
+    }
     onMinusClick(product: any){
       if(product.quantity > 1){
       this.totalPrice = 0;
